@@ -47,3 +47,41 @@ ORDER BY COUNT(ut.title) DESC;
 
 -- Check table 
 SELECT * FROM retiring_titles; 
+
+-- Retrieve the emp_no, first_name, last_name, and birth_date columns from the Employees table
+SELECT e.emp_no, 
+	e.first_name, 
+	e.last_name, 
+	e.birth_date
+FROM employees as e;
+
+-- Retrieve the from_date and to_date columns from the Department Employee table.
+SELECT de.from_date, 
+	de.to_date
+FROM dept_emp as de;
+
+-- Retrieve the title column from the Titles table.
+SELECT ti.title
+FROM titles as ti; 
+
+-- Creating mentorship eligibility file by joining the three above tables
+-- ans sorting by birthdate and current employment status. 
+SELECT DISTINCT ON(e.emp_no) e.emp_no, 
+	e.first_name, 
+	e.last_name, 
+	e.birth_date,
+	de.from_date, 
+	de.to_date,
+	ti.title
+INTO mentorship_eligibilty
+FROM employees as e
+	INNER JOIN dept_emp as de
+	ON e.emp_no = de.emp_no
+	INNER JOIN titles as ti
+	ON e.emp_no = ti.emp_no	
+WHERE (de.to_date = '9999-01-01')
+AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
+-- Order the table by the employee number. (ascending)
+ORDER BY e.emp_no ASC;
+
+	
