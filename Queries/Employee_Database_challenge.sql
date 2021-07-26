@@ -21,5 +21,20 @@ ON e.emp_no = ti.emp_no
 WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31') 
 ORDER BY e.emp_no ASC;
 
+-- Check table
+SELECT * FROM retirement_titles;
 
-	
+-- Retrieve the employee number, first and last name, and title columns from the Retirement Titles table.
+-- Use Dictinct with Orderby to remove duplicate rows
+SELECT DISTINCT ON (rt.emp_no) rt.emp_no,
+	rt.first_name, 
+	rt.last_name,
+	rt.title
+INTO unique_titles
+FROM retirement_titles as rt
+ORDER BY rt.emp_no ASC, rt.to_date DESC;
+
+-- Check table 
+SELECT * FROM unique_titles; 
+
+
