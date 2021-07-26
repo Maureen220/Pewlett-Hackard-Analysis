@@ -37,4 +37,13 @@ ORDER BY rt.emp_no ASC, rt.to_date DESC;
 -- Check table 
 SELECT * FROM unique_titles; 
 
+-- First, retrieve the number of titles from the Unique Titles table.
+-- Then, create a Retiring Titles table to hold the required information.
+SELECT COUNT(ut.title), ut.title
+INTO retiring_titles
+FROM unique_titles as ut
+GROUP BY ut.title
+ORDER BY COUNT(ut.title) DESC;
 
+-- Check table 
+SELECT * FROM retiring_titles; 
