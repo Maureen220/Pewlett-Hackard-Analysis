@@ -84,4 +84,29 @@ AND (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31')
 -- Order the table by the employee number. (ascending)
 ORDER BY e.emp_no ASC;
 
-	
+-- Check Table
+SELECT * FROM mentorship_eligibilty;
+
+-- Collecting additional tables for Deliverable #3 by explanding the birth dates of mentors
+-- and filtering by higher level positions
+SELECT DISTINCT ON(e.emp_no) e.emp_no, 
+	e.first_name, 
+	e.last_name, 
+	e.birth_date,
+	de.from_date, 
+	de.to_date,
+	ti.title
+INTO mentorship_eligibilty_expanded
+FROM employees as e
+	INNER JOIN dept_emp as de
+	ON e.emp_no = de.emp_no
+	INNER JOIN titles as ti
+	ON e.emp_no = ti.emp_no	
+WHERE (de.to_date = '9999-01-01')
+AND (e.birth_date BETWEEN '1964-01-01' AND '1969-12-31')
+AND ti.title IN ('Senior Engineer', 'Senior Staff', 'Technique Leader')
+-- Order the table by the employee number. (ascending)
+ORDER BY e.emp_no ASC;
+
+-- Check table
+SELECT * FROM mentorship_eligibilty_expanded; 
