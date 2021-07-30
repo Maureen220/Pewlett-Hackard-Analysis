@@ -18,10 +18,10 @@ The names and employee numbers of employees eligible for the mentorship program
 
 Here, one can conclude the following: 
 
-    -The staggering number of employees retiring, as observed in table one, is one that will leave a massive labor gap. Pewlett Hackard will need to have a game plan if they want to operate on a similar level of efficiency after the "Silver Tsunami."
-    -It can also be observed in table one that the higher-level positions, such as Senior Engineer, will be retiring at a higher rate than lower-level positions, which means there is room for individuals in lower-level positions to get promoted. 
-    -In table two, we created a table that totaled the employees who were born in the year 1965 and recommended that these employees could potentially become mentors for individuals in lower-level positions who are looking for promotions. 
-    -The total number of employees eligible for mentorship based on these parameters is at 1,549, while the total number of employees retiring is at more than 90,000. 
+-The staggering number of employees retiring, as observed in table one, is one that will leave a massive labor gap. Pewlett Hackard will need to have a game plan if they want to operate on a similar level of efficiency after the "Silver Tsunami."<br/>
+-It can also be observed in table one that the higher-level positions, such as Senior Engineer, will be retiring at a higher rate than lower-level positions, which means there is room for individuals in lower-level positions to get promoted. <br/>
+-In table two, we created a table that totaled the employees who were born in the year 1965 and recommended that these employees could potentially become mentors for individuals in lower-level positions who are looking for promotions. <br/>
+-The total number of employees eligible for mentorship based on these parameters is at 1,549, while the total number of employees retiring is at more than 90,000. <br/>
 
 <br/><br/>
 
